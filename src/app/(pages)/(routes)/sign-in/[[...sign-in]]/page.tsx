@@ -1,0 +1,21 @@
+"use client";
+
+import { useCurrentTheme } from "@/hooks/use-current-theme";
+import { SignIn } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
+
+const Page = () => {
+    const currentTheme = useCurrentTheme();
+
+    return (
+        <div className="flex items-center justify-center h-screen">
+            <SignIn
+                appearance={{
+                    baseTheme: currentTheme === "dark" ? dark : undefined
+                }}
+            />
+        </div>
+    );
+}
+
+export default Page;
