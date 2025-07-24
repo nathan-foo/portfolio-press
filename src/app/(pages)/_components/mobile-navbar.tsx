@@ -12,7 +12,7 @@ const Navbar = () => {
                 `flex items-center justify-between py-5 px-6 rounded-3xl transition-all duration-500 ease-out z-50 my-4 w-4xl
                 `}>
                 <div className='font-bold text-lg'>
-                    Portfolio Press
+                    📚 Portfolio Press
                 </div>
                 <div>
                     <SignedIn>
