@@ -33,7 +33,7 @@ export const ChatBar = ({ projectId }: Props) => {
     }
 
     return (
-        <div className="absolute bottom-0 left-0 w-full p-4">
+        <div className="relative w-full p-4 pt-1">
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className={`relative p-4 pt-1 rounded-2xl bg-sidebar border transition-all ${isFocused && "shadow-sm"}`}
@@ -56,12 +56,12 @@ export const ChatBar = ({ projectId }: Props) => {
                 <div className="flex items-end justify-between gap-x-2 pt-2">
                     <div className="flex text-muted-foreground gap-0.5">
                         <button onClick={handleDummy}>
-                            <div className="hover:bg-gray-200 hover:text-foreground transition-all duration-100 rounded p-1.5">
+                            <div className="hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-foreground transition-all duration-100 rounded p-1.5">
                                 <Clipboard size='14px' />
                             </div>
                         </button>
                         <button onClick={handleUpload}>
-                            <div className="hover:bg-gray-200 hover:text-foreground transition-all duration-100 rounded p-1.5">
+                            <div className="hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-foreground transition-all duration-100 rounded p-1.5">
                                 <UploadIcon size='14px' />
                             </div>
                         </button>

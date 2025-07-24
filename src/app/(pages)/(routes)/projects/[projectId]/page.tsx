@@ -2,6 +2,7 @@ import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/componen
 import { Sidebar } from '../_components/sidebar'
 import React from 'react'
 import { ChatWindow } from '../_components/chat-window';
+import { Navbar } from '../_components/navbar';
 
 interface Props {
     params: Promise<{
@@ -13,7 +14,8 @@ const ProjectPage = async ({ params }: Props) => {
     const { projectId } = await params;
 
     return (
-        <div className='h-screen'>
+        <div className='flex flex-col h-screen'>
+            <Navbar />
             <ResizablePanelGroup direction='horizontal'>
                 <ResizablePanel defaultSize={22.5} minSize={15} className='flex flex-col min-h-0'>
                     <Sidebar projectId={projectId} />
