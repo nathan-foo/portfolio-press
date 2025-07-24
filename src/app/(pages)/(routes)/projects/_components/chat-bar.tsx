@@ -33,10 +33,10 @@ export const ChatBar = ({ projectId }: Props) => {
     }
 
     return (
-        <div className="relative w-full p-4 pt-1">
+        <div className="absolute bottom-4 w-full p-4 pt-1">
             <form
                 onSubmit={handleSubmit(onSubmit)}
-                className={`relative p-4 pt-1 rounded-2xl bg-sidebar border transition-all ${isFocused && "shadow-sm"}`}
+                className={`relative p-4 pt-1 rounded-2xl bg-white/30 dark:bg-sidebar/30 border transition-all backdrop-blur-sm backdrop-saturate-150 ${isFocused && "shadow-sm"}`}
             >
                 <TextareaAutosize
                     {...register("value")}
