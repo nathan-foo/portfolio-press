@@ -22,9 +22,9 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className='flex items-center justify-center gap-x-8 text-muted-foreground font-medium'>
-                        <Link href='/'>Product</Link>
-                        <Link href='/'>Pricing</Link>
-                        <Link href='/'>Docs</Link>
+                        <Link href='/product'>Product</Link>
+                        <Link href='/pricing'>Pricing</Link>
+                        <Link href='/dashboard'>Dashboard</Link>
                     </div>
                     <div>
                         <SignedIn>
