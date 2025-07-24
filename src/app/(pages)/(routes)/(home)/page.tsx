@@ -1,13 +1,11 @@
 "use client";
 
 import { UploadDropzone } from "@/utils/uploadthing";
-import Navbar from "../../_components/navbar";
 import { toast } from "sonner";
 
 const Page = () => {
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-            <Navbar />
+        <div className="flex flex-col items-center justify-center h-[200vh]">
             Home
             <UploadDropzone
                 endpoint="pdfUploader"
