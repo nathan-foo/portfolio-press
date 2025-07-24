@@ -1,9 +1,9 @@
 "use client"
 
 import { Button } from '@/components/ui/button'
-import { useScroll } from '@/hooks/use-scroll'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 import React from 'react'
+import UserControl from './user-control'
 
 const Navbar = () => {
     return (
@@ -17,7 +17,7 @@ const Navbar = () => {
                 <div>
                     <SignedIn>
                         <div className='flex items-center justify-center'>
-                            <UserButton showName />
+                            <UserControl showName />
                         </div>
                     </SignedIn>
                     <SignedOut>
