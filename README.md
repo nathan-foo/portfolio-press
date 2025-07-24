@@ -8,6 +8,7 @@
 ### Prisma database management commands:
 - npx prisma migrate reset
 - npx prisma migrate dev
+- npx prisma studio
 
 ### Required .env variables:
 
