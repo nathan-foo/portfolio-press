@@ -1,4 +1,5 @@
 import React from 'react'
+import { ChatBar } from './chat-bar';
 
 interface Props {
     projectId: string;
@@ -6,8 +7,8 @@ interface Props {
 
 export const ChatWindow = ({ projectId }: Props) => {
     return (
-        <div className='w-full'>
-            chat {projectId}
+        <div className='relative w-full h-screen'>
+            <ChatBar projectId={projectId} />
         </div>
     )
 }

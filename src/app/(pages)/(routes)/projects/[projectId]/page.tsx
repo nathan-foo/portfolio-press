@@ -19,7 +19,7 @@ const ProjectPage = async ({ params }: Props) => {
                     <Sidebar projectId={projectId} />
                 </ResizablePanel>
                 <ResizableHandle />
-                <ResizablePanel defaultSize={70} minSize={50} className='flex flex-col min-h-0'>
+                <ResizablePanel defaultSize={77.5} minSize={65} className='flex flex-col min-h-0'>
                     <ChatWindow projectId={projectId} />
                 </ResizablePanel>
             </ResizablePanelGroup>
