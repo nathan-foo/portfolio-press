@@ -1,11 +1,14 @@
 ## Documentation
 
+Portfolio Press is an agentic web builder designed to generate portfolio websites from resume PDFs. Designed for both students and professionals, it highlights key achievements, projects, and skills with sleek, responsive layouts. No coding required. Just upload your resume, customize your style, and launch a standout personal brand in minutes.
+
 ### Startup commands:
 
 - npm run dev
 - npx inngest-cli@latest dev
 
 ### Prisma database management commands:
+
 - npx prisma migrate reset
 - npx prisma migrate dev
 - npx prisma studio
@@ -30,3 +33,7 @@
 - NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL="/"
 
 - UPLOADTHING_TOKEN
+
+### Notes
+
+- Tech stack inspired by Code With Antonio.
