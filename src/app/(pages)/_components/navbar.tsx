@@ -17,7 +17,7 @@ export const Navbar = () => {
     const { setTheme, theme } = useTheme();
 
     return (
-        <div className="w-full h-16 border-b flex items-center px-4">
+        <div className="w-full h-16 border-b flex items-center px-4 bg-background">
             <div className="flex items-center justify-between w-full">
                 <Link href='/' className="font-bold">
                     📚 Portfolio Press

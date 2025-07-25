@@ -63,7 +63,7 @@ const CreatePage = () => {
 
                             const result = await transcribePdf(res[0].ufsUrl);
                             const text = result.response.text();
-                            
+
                             await createProject.mutateAsync({ value: text });
                         }}
                         onUploadError={(error: Error) => {
