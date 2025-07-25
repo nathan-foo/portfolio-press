@@ -1,9 +1,12 @@
 "use client";
 
+import { Navbar } from "../../_components/navbar";
+
 const ProductPage = () => {
     return (
-        <div className="flex flex-col items-center justify-center h-[200vh]">
-            Product
+        <div className="flex flex-col h-screen">
+            <Navbar />
+            Dashboard
         </div>
     )
 }
