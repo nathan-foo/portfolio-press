@@ -9,6 +9,7 @@ import {
     DropdownMenuRadioGroup,
     DropdownMenuRadioItem
 } from "@/components/ui/dropdown-menu"
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs"
 import { MoonStarIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 import Link from "next/link"
@@ -47,7 +48,16 @@ export const Navbar = () => {
                         </DropdownMenuContent>
                     </DropdownMenu>
                     <div className="flex items-center justify-center">
-                        <UserControl />
+                        <SignedIn>
+                            <UserControl />
+                        </SignedIn>
+                        <SignedOut>
+                            <Button asChild>
+                                <Link href='/sign-in'>
+                                    Sign In
+                                </Link>
+                            </Button>
+                        </SignedOut>
                     </div>
                 </div>
             </div>
