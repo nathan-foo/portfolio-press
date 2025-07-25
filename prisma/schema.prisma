@@ -27,7 +27,7 @@ model Project {
 
 enum MessageRole {
   USER
-  ASSISTANT
+  AGENT
 }
 
 enum MessageType {

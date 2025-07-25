@@ -3,6 +3,7 @@ import { protectedProcedure, createTRPCRouter } from "@/trpc/init";
 import z from "zod";
 import { generateSlug } from "random-word-slugs";
 import { TRPCError } from "@trpc/server";
+import { inngest } from "@/inngest/client";
 
 export const projectsRouter = createTRPCRouter({
     // Get a singular project by ID
@@ -46,7 +47,7 @@ export const projectsRouter = createTRPCRouter({
             z.object({
                 value: z.string()
                     .min(1, { message: "Value is required" })
-                    .max(10000, { message: "Value exceeds maximum length" }),
+                    .max(5000, { message: "Value exceeds maximum length" }),
             }),
         )
         .mutation(async ({ input, ctx }) => {
@@ -65,6 +66,14 @@ export const projectsRouter = createTRPCRouter({
                     }
                 }
             })
+
+            await inngest.send({
+                name: "dev/ai.agent",
+                data: {
+                    value: input.value,
+                    projectId: project.id,
+                }
+            });
 
             return project;
         })

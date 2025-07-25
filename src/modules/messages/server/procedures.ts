@@ -1,3 +1,4 @@
+import { inngest } from "@/inngest/client";
 import { prisma } from "@/lib/db";
 import { protectedProcedure, createTRPCRouter } from "@/trpc/init";
 import { TRPCError } from "@trpc/server";
@@ -35,7 +36,7 @@ export const messagesRouter = createTRPCRouter({
             z.object({
                 value: z.string()
                     .min(1, { message: "Value is required" })
-                    .max(10000, { message: "Value exceeds maximum length" }),
+                    .max(5000, { message: "Value exceeds maximum length" }),
                 projectId: z.string().min(1, { message: "Project ID is required" }),
             }),
         )
@@ -58,6 +59,14 @@ export const messagesRouter = createTRPCRouter({
                     role: "USER",
                     type: "RESULT",
                     projectId: project.id,
+                }
+            });
+
+            await inngest.send({
+                name: "dev/ai.agent",
+                data: {
+                    value: input.value,
+                    projectId: input.projectId,
                 }
             });
 

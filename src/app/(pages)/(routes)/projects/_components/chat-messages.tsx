@@ -24,7 +24,7 @@ export const ChatMessages = ({ projectId }: Props) => {
     }));
 
     useEffect(() => {
-        const lastAgentMessage = messages.findLast((message) => message.role === "ASSISTANT");
+        const lastAgentMessage = messages.findLast((message) => message.role === "AGENT");
 
         if (lastAgentMessage?.sandbox && lastAgentMessage.id !== lastAgentMessageIdRef.current) {
             console.log('new sandbox')
@@ -45,8 +45,8 @@ export const ChatMessages = ({ projectId }: Props) => {
                     {msg.role === "USER" && (
                         <UserMessage projectId={projectId} input={msg.content} />
                     )}
-                    {msg.role === "ASSISTANT" && (
-                        <AgentMessage projectId={projectId} input={msg.content} />
+                    {msg.role === "AGENT" && (
+                        <AgentMessage projectId={projectId} input={msg.content} url={msg.sandbox?.sandboxUrl} />
                     )}
                 </div>
             ))}
