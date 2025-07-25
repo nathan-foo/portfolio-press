@@ -1,5 +1,5 @@
 import { inngest } from "./client";
-import { openai, createAgent, createNetwork, createState, Message, createTool, Tool } from "@inngest/agent-kit";
+import { openai, gemini, createAgent, createNetwork, createState, Message, createTool, Tool } from "@inngest/agent-kit";
 import { lastAgentMessageContent } from "./utils";
 import Sandbox from "@e2b/code-interpreter";
 import { getSandbox, SANDBOX_TIMEOUT } from "@/utils/e2b";
@@ -189,6 +189,26 @@ export const agentFunction = inngest.createFunction(
         // Run agent network
         const result = await network.run(event.data.value);
 
+        // Generate short summary
+        const responseGenerator = createAgent({
+            name: "response-generator",
+            description: "A response generator.",
+            system: `Write a short description in a couple of sentences and return the text. Ignore the <END_BACKGROUND_TASK> wrappers.`,
+            model: gemini({model: "gemini-2.0-flash"}),
+        });
+
+        const { output: response } = await responseGenerator.run(result.state.data.summary);
+
+        const generateResponse = () => {
+            const output = response[0];
+
+            if (output.type !== "text") {
+                return "Here you go!";
+            }
+
+            return output.content;
+        }
+
         const error =
             !result.state.data.summary ||
             Object.keys(result.state.data.files || {}).length === 0
@@ -218,7 +238,7 @@ export const agentFunction = inngest.createFunction(
 
             return await prisma.message.create({
                 data: {
-                    content: result.state.data.summary,
+                    content: generateResponse(),
                     role: "AGENT",
                     type: "RESULT",
                     projectId: event.data.projectId,

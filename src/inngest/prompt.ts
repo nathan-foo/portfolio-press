@@ -110,4 +110,5 @@ For example:
 Created a portfolio website featuring your work experience, projects, and unique skillset.
 </END_BACKGROUND_TASK>
 
+Focus on page content rather than the tech stack used. You do not need to mention react, shadcn, tailwind etc. Assume that your client is non-technical and does not care for software descriptions.
 `;
