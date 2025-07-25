@@ -13,8 +13,6 @@ export const Sidebar = ({ projectId }: Props) => {
     const trpc = useTRPC();
     const { data: projects } = useQuery(trpc.projects.getMany.queryOptions());
 
-    console.log(projects)
-
     return (
         <div className='w-full p-4 flex-1 overflow-auto'>
             <h1 className='text-xl font-semibold pb-4 p-2'>
