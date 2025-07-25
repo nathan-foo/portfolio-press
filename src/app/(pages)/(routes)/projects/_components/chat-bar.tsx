@@ -6,6 +6,9 @@ import { useState } from "react";
 import { Clipboard, SparkleIcon, UploadIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from 'react'
+import { useTRPC } from "@/trpc/client";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { toast } from "sonner";
 
 interface Props {
     projectId: string;
@@ -13,23 +16,41 @@ interface Props {
 
 export const ChatBar = ({ projectId }: Props) => {
     const [isFocused, setIsFocused] = useState(false);
+    
+    const trpc = useTRPC();
+    const queryClient = useQueryClient();
+
+    const createMessage = useMutation(trpc.messages.create.mutationOptions({
+        onSuccess: () => {
+            reset();
+            queryClient.invalidateQueries(
+                trpc.messages.getMany.queryOptions({ projectId }),
+            )
+        },
+        onError: (error) => {
+            toast.error(error.message);
+        }
+    }))
 
     const { register, handleSubmit, reset } = useForm<{ value: string }>({
         defaultValues: { value: "" },
     });
 
-    const onSubmit = ({ value }: { value: string }) => {
+    const onSubmit = async ({ value }: { value: string }) => {
         if (!value.trim()) return;
-        console.log(value, projectId);
-        reset();
+
+        await createMessage.mutateAsync({
+            value: value,
+            projectId
+        });
     };
 
     const handleUpload = () => {
-        console.log('upload')
+        console.log('upload');
     }
 
     const handleDummy = () => {
-        console.log('dummy')
+        console.log('dummy');
     }
 
     return (
