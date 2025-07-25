@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { transcribePdf } from "@/models/transcribe-pdf";
 import { useState } from "react";
 import { LoaderIcon } from "lucide-react";
+import { Navbar } from "../../_components/navbar";
 
 const CreatePage = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -44,42 +45,39 @@ const CreatePage = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center p-8">
-            {!isLoading && (
-                <UploadDropzone
-                    endpoint="pdfUploader"
-                    onClientUploadComplete={async (res) => {
-                        // Do something with the response
-                        toast("Analyzing your resume, hang tight!");
-                        setIsLoading(true);
-                        const result = await transcribePdf(res[0].ufsUrl);
-                        const text = result.response.text();
-                        await createProject.mutateAsync({ value: text });
-                    }}
-                    onUploadError={(error: Error) => {
-                        toast("Sorry, something went wrong.");
-                        setIsLoading(false);
-                    }}
-                />
-            )}
-            {isLoading && (
-                <div>
-                    <LoaderIcon className="animate-spin" />
-                </div>
-            )}
+        <div className="flex flex-col h-screen">
+            <Navbar />
+            <div className="flex flex-col items-center justify-center p-8">
+                <h1 className="pt-20 text-5xl font-bold">
+                    Ready to boost your career?
+                </h1>
+                <p className="text-lg py-8 text-muted-foreground">
+                    Upload your resume to get started.
+                </p>
+                {!isLoading && (
+                    <UploadDropzone
+                        endpoint="pdfUploader"
+                        onClientUploadComplete={async (res) => {
+                            toast("Getting ready, hang tight!");
+                            setIsLoading(true);
 
-            {/* <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full max-w-md">
-                <label htmlFor="value" className="text-lg font-medium">Message</label>
-                <input
-                    id="value"
-                    {...register("value")}
-                    className="p-2 border rounded-md"
-                    placeholder="Enter project idea"
-                />
-                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
-                    Create Project
-                </button>
-            </form> */}
+                            const result = await transcribePdf(res[0].ufsUrl);
+                            const text = result.response.text();
+                            
+                            await createProject.mutateAsync({ value: text });
+                        }}
+                        onUploadError={(error: Error) => {
+                            toast("Sorry, something went wrong.");
+                            setIsLoading(false);
+                        }}
+                    />
+                )}
+                {isLoading && (
+                    <div>
+                        <LoaderIcon className="animate-spin" />
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

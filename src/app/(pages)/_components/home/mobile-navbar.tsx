@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 import React from 'react'
-import UserControl from './user-control'
+import UserControl from '../user-control'
 
 const Navbar = () => {
     return (

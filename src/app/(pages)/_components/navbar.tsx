@@ -1,50 +1,56 @@
 "use client"
 
-import { Button } from '@/components/ui/button'
-import { useScroll } from '@/hooks/use-scroll'
-import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs'
-import Link from 'next/link'
-import React from 'react'
-import UserControl from './user-control'
+import UserControl from "@/app/(pages)/_components/user-control"
+import { Button } from "@/components/ui/button"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuTrigger,
+    DropdownMenuRadioGroup,
+    DropdownMenuRadioItem
+} from "@/components/ui/dropdown-menu"
+import { MoonStarIcon } from "lucide-react"
+import { useTheme } from "next-themes"
+import Link from "next/link"
 
-const Navbar = () => {
-    const isScrolled = useScroll();
+export const Navbar = () => {
+    const { setTheme, theme } = useTheme();
 
     return (
-        <div className="hidden lg:inline fixed top-0 left-1/2 transform -translate-x-1/2">
-            <div className='flex items-center justify-center'>
-                <div className={
-                    `flex items-center justify-between py-4.5 px-6 rounded-3xl transition-all duration-500 ease-out z-50 my-4
-                ${isScrolled ? 'bg-gray/80 backdrop-blur-md shadow-lg w-4xl' : 'w-5xl'}
-                `}>
-                    <div className='font-bold text-xl'>
-                        <Link href='/'>
-                            📚 Portfolio Press
-                        </Link>
-                    </div>
-                    <div className='flex items-center justify-center gap-x-8 text-muted-foreground font-medium'>
-                        <Link href='/product'>Product</Link>
-                        <Link href='/pricing'>Pricing</Link>
-                        <Link href='/dashboard'>Dashboard</Link>
-                    </div>
-                    <div>
-                        <SignedIn>
-                            <div className='flex items-center justify-center'>
-                                <UserControl showName />
-                            </div>
-                        </SignedIn>
-                        <SignedOut>
-                            <div className='flex items-center justify-center'>
-                                <Button className='rounded-lg' size='lg' asChild>
-                                    <SignInButton />
-                                </Button>
-                            </div>
-                        </SignedOut>
+        <div className="w-full h-16 border-b flex items-center px-4">
+            <div className="flex items-center justify-between w-full">
+                <Link href='/' className="font-bold">
+                    📚 Portfolio Press
+                </Link>
+                <div className="flex items-center justify-center gap-4">
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button
+                                variant='ghost'
+                                className='border focus-visible:ring-0 hover:bg-muted transition-opacity'
+                            >
+                                <MoonStarIcon />
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent side='bottom' align='end'>
+                            <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
+                                <DropdownMenuRadioItem value='light'>
+                                    <span>Light</span>
+                                </DropdownMenuRadioItem>
+                                <DropdownMenuRadioItem value='dark'>
+                                    <span>Dark</span>
+                                </DropdownMenuRadioItem>
+                                <DropdownMenuRadioItem value='system'>
+                                    <span>System</span>
+                                </DropdownMenuRadioItem>
+                            </DropdownMenuRadioGroup>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                    <div className="flex items-center justify-center">
+                        <UserControl />
                     </div>
                 </div>
             </div>
         </div>
     )
 }
-
-export default Navbar

@@ -2,7 +2,7 @@ import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/componen
 import { Sidebar } from '../_components/sidebar'
 import React from 'react'
 import { ChatWindow } from '../_components/chat-window';
-import { Navbar } from '../_components/navbar';
+import { Navbar } from '../../../_components/navbar';
 
 interface Props {
     params: Promise<{
