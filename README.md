@@ -37,3 +37,4 @@ Portfolio Press is an agentic web builder designed to generate portfolio website
 ### Notes
 
 - Tech stack inspired by Code With Antonio.
+- Project idea inspired by Andrew W.
