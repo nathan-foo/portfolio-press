@@ -7,10 +7,10 @@ const Page = () => {
     return (
         <div className="w-full">
             <div className="flex flex-col pt-[28vh] px-24">
-                <h1 className="text-5xl font-semibold leading-14 max-w-lg w-full">
+                <h1 className="text-[3.4rem] font-semibold leading-15 max-w-xl w-full">
                     Go from resume to website, <span className="bg-gradient-to-r from-orange-400 to-orange-600 dark:from-orange-500 dark:to-orange-700 bg-clip-text text-transparent">in seconds.</span>
                 </h1>
-                <p className="text-lg text-muted-foreground max-w-md w-full pt-4">
+                <p className="text-lg text-muted-foreground max-w-lg w-full pt-4">
                     Build your own personal brand with the help of Portfolio Press, the AI-powered career builder.
                 </p>
                 <Button size='lg' className="w-full max-w-40 mt-6" asChild>

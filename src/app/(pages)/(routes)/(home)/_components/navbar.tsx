@@ -5,7 +5,7 @@ import { useScroll } from '@/hooks/use-scroll'
 import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs'
 import Link from 'next/link'
 import React from 'react'
-import UserControl from '../user-control'
+import UserControl from '../../../_components/user-control'
 
 const Navbar = () => {
     const isScrolled = useScroll();

@@ -17,10 +17,6 @@ const CreatePage = () => {
     const trpc = useTRPC();
     const queryClient = useQueryClient();
 
-    const { register, handleSubmit, reset } = useForm<{ value: string }>({
-        defaultValues: { value: "" },
-    });
-
     const createProject = useMutation(trpc.projects.create.mutationOptions({
         onSuccess: (data) => {
             queryClient.invalidateQueries(
@@ -37,12 +33,6 @@ const CreatePage = () => {
             }
         }
     }));
-
-    const onSubmit = async ({ value }: { value: string }) => {
-        if (!value.trim()) return;
-        await createProject.mutateAsync({ value });
-        reset();
-    };
 
     return (
         <div className="flex flex-col h-screen">

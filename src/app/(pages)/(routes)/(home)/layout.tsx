@@ -1,5 +1,5 @@
-import MobileNavbar from "../../_components/home/mobile-navbar";
-import Navbar from "../../_components/home/navbar";
+import MobileNavbar from "./_components/mobile-navbar";
+import Navbar from "./_components/navbar";
 
 interface Props {
     children: React.ReactNode;
