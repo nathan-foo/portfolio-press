@@ -23,10 +23,10 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className='flex items-center justify-center gap-x-8 text-muted-foreground font-medium'>
-                        <Link href='/create'>Create</Link>
-                        <Link href='/dashboard'>Dashboard</Link>
                         <Link href='/product'>Product</Link>
                         <Link href='/pricing'>Pricing</Link>
+                        <Link href='/dashboard'>Dashboard</Link>
+                        <Link href='/create'>Create</Link>
                     </div>
                     <div>
                         <SignedIn>

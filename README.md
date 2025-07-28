@@ -1,6 +1,8 @@
 ## Documentation
 
-Portfolio Press is an agentic web builder designed to generate portfolio websites from resume PDFs. Made for both students and professionals, it highlights key achievements, projects, and skills with sleek, responsive layouts. No coding required. Just upload your resume, customize your design with natural language, and launch a standout personal brand in minutes.
+My inspiration for this project came while sitting with a friend at our university library. He was working on a class assignment to build a personal portfolio website, and I thought, "What if you could generate one instantly, from scratch, without writing a single line of code or spending hours on design?"
+
+That's why I built Portfolio Press: an agentic web builder designed to generate portfolio websites from resume PDFs. Made for both students and professionals, it highlights key achievements, projects, and skills with sleek, responsive layouts. No coding required. Just upload your resume, customize your design with natural language, and launch a standout personal brand in minutes.
 
 ### Startup commands:
 
@@ -37,4 +39,3 @@ Portfolio Press is an agentic web builder designed to generate portfolio website
 ### Notes
 
 - Tech stack inspired by Code With Antonio.
-- Project idea inspired by Andrew W.
