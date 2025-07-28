@@ -66,6 +66,7 @@ export const agentFunction = inngest.createFunction(
                     temperature: 0.1,
                 }
             }),
+            // Agent tools borrowed from CWA
             tools: [
                 createTool({
                     name: "terminal",
@@ -206,7 +207,7 @@ export const agentFunction = inngest.createFunction(
                 return "Here you go!";
             }
 
-            return output.content;
+            return `${output.content}`;
         }
 
         const error =
