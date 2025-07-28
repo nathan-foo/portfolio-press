@@ -7,6 +7,7 @@ import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
 import { XIcon } from "lucide-react";
 import { toast } from "sonner";
+import enUS from "@/app/en_us.json";
 
 const DashboardPage = () => {
     const trpc = useTRPC();
@@ -15,11 +16,11 @@ const DashboardPage = () => {
 
     const deleteProject = useMutation(trpc.projects.delete.mutationOptions({
         onSuccess: () => {
-            toast("Portfolio deleted!");
+            toast(`${enUS.toast.portfolio_delete}`);
             queryClient.invalidateQueries(trpc.projects.getMany.queryOptions());
         },
         onError: () => {
-            toast("Something went wrong, please try again.");
+            toast(`${enUS.toast.error}`);
         }
     }));
 
@@ -33,10 +34,10 @@ const DashboardPage = () => {
             <div className="flex flex-col w-full p-8">
                 <div className="flex flex-col items-center justify-center">
                     <div className="text-5xl font-bold pt-20">
-                        Your Portfolios
+                        {enUS.dashboard.dashboard_header}
                     </div>
                     <p className="text-lg pt-8 pb-20 text-muted-foreground">
-                        View and edit your generated websites here.
+                        {enUS.dashboard.dashboard_subheader}
                     </p>
                     <div className="w-4xl">
                         <div className="grid grid-cols-3 gap-4 p-6 w-full bg-muted rounded-xl border">

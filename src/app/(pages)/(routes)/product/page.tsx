@@ -1,6 +1,7 @@
 "use client";
 
 import { Navbar } from "../../_components/navbar";
+import enUS from "@/app/en_us.json";
 
 const ProductPage = () => {
 
@@ -10,10 +11,10 @@ const ProductPage = () => {
             <div className="flex flex-col w-full p-8">
                 <div className="flex flex-col items-center justify-center">
                     <div className="text-5xl font-bold pt-20">
-                        What is Portfolio Press?
+                        {enUS.product.product_header}
                     </div>
                     <p className="text-lg pt-8 pb-20 text-muted-foreground">
-                        Learn how our product can kickstart your career.
+                        {enUS.product.product_subheader}
                     </p>
                     
                 </div>

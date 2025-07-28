@@ -1,9 +1,10 @@
 "use client"
 
 import { Button } from '@/components/ui/button'
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs'
 import React from 'react'
 import UserControl from '../../../_components/user-control'
+import enUS from "@/app/en_us.json";
 
 const Navbar = () => {
     return (
@@ -12,7 +13,7 @@ const Navbar = () => {
                 `flex items-center justify-between py-5 px-6 rounded-3xl transition-all duration-500 ease-out z-50 my-4 w-4xl
                 `}>
                 <div className='font-bold text-lg'>
-                    📚 Portfolio Press
+                    {enUS.navbar.logo_text}
                 </div>
                 <div>
                     <SignedIn>
@@ -23,7 +24,7 @@ const Navbar = () => {
                     <SignedOut>
                         <div className='flex items-center justify-center'>
                             <Button className='rounded-lg' size='lg' asChild>
-                            <SignInButton />
+                                <SignInButton />
                             </Button>
                         </div>
                     </SignedOut>

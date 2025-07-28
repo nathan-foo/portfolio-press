@@ -1,0 +1,46 @@
+{
+    "home": {
+        "hero_header": "Go from resume to website, ",
+        "hero_header_color": "in seconds.",
+        "hero_subheader": "Build your own personal brand with the help of Portfolio Press, the AI-powered career builder.",
+        "hero_button": "Get started ↗"
+    },
+    "create": {
+        "create_header": "Ready to boost your career?",
+        "create_subheader": "Upload your resume to get started."
+    },
+    "dashboard": {
+        "dashboard_header": "Your Portfolios",
+        "dashboard_subheader": "View and edit your generated websites here."
+    },
+    "product": {
+        "product_header": "What is Portfolio Press?",
+        "product_subheader": "Learn how our product can kickstart your career."
+    },
+    "pricing": {
+        "pricing_header": "Pricing",
+        "pricing_subheader": "Discover the right plan for your needs."
+    },
+    "navbar": {
+        "logo_text": "📚 Portfolio Press",
+        "links": {
+            "product": "Product",
+            "pricing": "Pricing",
+            "dashboard": "Dashboard",
+            "create": "Create"
+        },
+        "appearance": {
+            "light": "Light",
+            "dark": "Dark",
+            "system": "System"
+        }
+    },
+    "sidebar": {
+        "sidebar_title": "Projects"
+    },
+    "toast": {
+        "loading": "Getting ready, hang tight!",
+        "error": "Something went wrong, please try again.",
+        "portfolio_delete": "Portfolio deleted!"
+    }
+}

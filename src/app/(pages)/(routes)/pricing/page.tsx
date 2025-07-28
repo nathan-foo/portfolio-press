@@ -1,6 +1,7 @@
 "use client";
 
 import { Navbar } from "../../_components/navbar";
+import enUS from "@/app/en_us.json";
 
 const PricingPage = () => {
 
@@ -10,10 +11,10 @@ const PricingPage = () => {
             <div className="flex flex-col w-full p-8">
                 <div className="flex flex-col items-center justify-center">
                     <div className="text-5xl font-bold pt-20">
-                        Pricing
+                        {enUS.pricing.pricing_header}
                     </div>
                     <p className="text-lg pt-8 pb-20 text-muted-foreground">
-                        Discover the right plan for your needs.
+                        {enUS.pricing.pricing_subheader}
                     </p>
                     
                 </div>

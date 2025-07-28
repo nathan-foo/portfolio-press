@@ -1,9 +1,10 @@
 "use client"
 
 import { useTRPC } from '@/trpc/client';
-import { useQuery, useSuspenseQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 import React from 'react'
+import enUS from "@/app/en_us.json";
 
 interface Props {
     projectId: string;
@@ -16,7 +17,7 @@ export const Sidebar = ({ projectId }: Props) => {
     return (
         <div className='w-full p-4 flex-1 overflow-auto'>
             <h1 className='text-xl font-semibold pb-4 p-2'>
-                Your Projects
+                {enUS.sidebar.sidebar_title}
             </h1>
             <div className='flex flex-col gap-y-2'>
                 {projects?.map((project, index) => (

@@ -13,6 +13,7 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs"
 import { MoonStarIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 import Link from "next/link"
+import enUS from "@/app/en_us.json";
 
 export const Navbar = () => {
     const { setTheme, theme } = useTheme();
@@ -21,7 +22,7 @@ export const Navbar = () => {
         <div className="w-full h-16 border-b flex items-center px-4 bg-background">
             <div className="flex items-center justify-between w-full">
                 <Link href='/' className="font-bold">
-                    📚 Portfolio Press
+                    {enUS.navbar.logo_text}
                 </Link>
                 <div className="flex items-center justify-center gap-4">
                     <DropdownMenu>
@@ -36,13 +37,13 @@ export const Navbar = () => {
                         <DropdownMenuContent side='bottom' align='end'>
                             <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
                                 <DropdownMenuRadioItem value='light'>
-                                    <span>Light</span>
+                                    <span>{enUS.navbar.appearance.light}</span>
                                 </DropdownMenuRadioItem>
                                 <DropdownMenuRadioItem value='dark'>
-                                    <span>Dark</span>
+                                    <span>{enUS.navbar.appearance.dark}</span>
                                 </DropdownMenuRadioItem>
                                 <DropdownMenuRadioItem value='system'>
-                                    <span>System</span>
+                                    <span>{enUS.navbar.appearance.system}</span>
                                 </DropdownMenuRadioItem>
                             </DropdownMenuRadioGroup>
                         </DropdownMenuContent>
@@ -53,9 +54,7 @@ export const Navbar = () => {
                         </SignedIn>
                         <SignedOut>
                             <Button asChild>
-                                <Link href='/sign-in'>
-                                    Sign In
-                                </Link>
+                                <SignInButton />
                             </Button>
                         </SignedOut>
                     </div>

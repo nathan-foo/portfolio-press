@@ -6,6 +6,7 @@ import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs'
 import Link from 'next/link'
 import React from 'react'
 import UserControl from '../../../_components/user-control'
+import enUS from "@/app/en_us.json";
 
 const Navbar = () => {
     const isScrolled = useScroll();
@@ -19,14 +20,14 @@ const Navbar = () => {
                 `}>
                     <div className='font-bold text-xl'>
                         <Link href='/'>
-                            📚 Portfolio Press
+                            {enUS.navbar.logo_text}
                         </Link>
                     </div>
                     <div className='flex items-center justify-center gap-x-8 text-muted-foreground font-medium'>
-                        <Link href='/product'>Product</Link>
-                        <Link href='/pricing'>Pricing</Link>
-                        <Link href='/dashboard'>Dashboard</Link>
-                        <Link href='/create'>Create</Link>
+                        <Link href='/product'>{enUS.navbar.links.product}</Link>
+                        <Link href='/pricing'>{enUS.navbar.links.pricing}</Link>
+                        <Link href='/dashboard'>{enUS.navbar.links.dashboard}</Link>
+                        <Link href='/create'>{enUS.navbar.links.create}</Link>
                     </div>
                     <div>
                         <SignedIn>

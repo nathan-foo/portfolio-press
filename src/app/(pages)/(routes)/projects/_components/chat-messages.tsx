@@ -4,8 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import { UserMessage } from './user-message';
 import { AgentMessage } from './agent-message';
 import { useTRPC } from '@/trpc/client';
-import { useQueryClient, useSuspenseQuery } from '@tanstack/react-query';
-import { useUser } from '@clerk/nextjs';
+import {useSuspenseQuery } from '@tanstack/react-query';
 import { LoadingMessage } from './loading-message';
 
 interface Props {
@@ -43,10 +42,10 @@ export const ChatMessages = ({ projectId }: Props) => {
             {messages.map((msg, index) => (
                 <div key={index}>
                     {msg.role === "USER" && (
-                        <UserMessage projectId={projectId} input={msg.content} />
+                        <UserMessage input={msg.content} />
                     )}
                     {msg.role === "AGENT" && (
-                        <AgentMessage projectId={projectId} input={msg.content} url={msg.sandbox?.sandboxUrl} />
+                        <AgentMessage input={msg.content} url={msg.sandbox?.sandboxUrl} />
                     )}
                 </div>
             ))}

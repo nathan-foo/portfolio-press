@@ -2,20 +2,21 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import enUS from "@/app/en_us.json";
 
 const Page = () => {
     return (
         <div className="w-full">
             <div className="flex flex-col pt-[28vh] px-24">
                 <h1 className="text-[3.4rem] font-semibold leading-15 max-w-xl w-full">
-                    Go from resume to website, <span className="bg-gradient-to-r from-orange-400 to-orange-600 dark:from-orange-500 dark:to-orange-700 bg-clip-text text-transparent">in seconds.</span>
+                    {enUS.home.hero_header}<span className="bg-gradient-to-r from-orange-400 to-orange-600 dark:from-orange-500 dark:to-orange-700 bg-clip-text text-transparent">{enUS.home.hero_header_color}</span>
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-lg w-full pt-4">
-                    Build your own personal brand with the help of Portfolio Press, the AI-powered career builder.
+                    {enUS.home.hero_subheader}
                 </p>
                 <Button size='lg' className="w-full max-w-40 mt-6" asChild>
                     <Link href='/create'>
-                        Get started &#8599;
+                        {enUS.home.hero_button}
                     </Link>
                 </Button>
             </div>
