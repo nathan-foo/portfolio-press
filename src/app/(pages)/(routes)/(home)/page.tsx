@@ -16,7 +16,7 @@ const Page = () => {
                 </p>
                 <Button size='lg' className="w-full max-w-40 mt-6" asChild>
                     <Link href='/create'>
-                        {enUS.home.hero_button}
+                        {enUS.button.get_started}
                     </Link>
                 </Button>
             </div>

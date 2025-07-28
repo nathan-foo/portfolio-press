@@ -2,8 +2,7 @@
     "home": {
         "hero_header": "Go from resume to website, ",
         "hero_header_color": "in seconds.",
-        "hero_subheader": "Build your own personal brand with the help of Portfolio Press, the AI-powered career builder.",
-        "hero_button": "Get started ↗"
+        "hero_subheader": "Build your own personal brand with the help of Portfolio Press, the AI-powered career builder."
     },
     "create": {
         "header": "Ready to boost your career?",
@@ -16,7 +15,34 @@
     "product": {
         "header": "What is Portfolio Press?",
         "subheader": "Learn how our product can kickstart your career.",
-        "body_header": "No Code. No Templates. Just Plain English."
+        "body": {
+            "title": "No Code. No Templates. Just Plain English.",
+            "paragraph_1": "Your resume does a lot... but it can't show your personality, adapt to different audiences, or grow with your career. That's where we come in.",
+            "paragraph_2": "We take your existing resume and turn it into a sleek, modern website — with no technical skills required. You just upload your resume and tell us what you want. We'll do the rest."
+        },
+        "pitch": {
+            "title": "Why Just Have a Resume, When You Can Have a Website?",
+            "subtitle": "Recruiters and clients expect more than a PDF. A personal website shows initiative, creativity, and polish — with Portfolio Press, that's what you get without the hassle of building from scratch.",
+            "benefits": {
+                "title": "Our tool makes it effortless:",
+                "point_1": "Upload Once, Done: Just submit your PDF resume — we extract the content and format it into a clean, mobile-friendly website.",
+                "point_2": "Customize With Natural Language: Want a dark theme? A new font? A portfolio section? Just describe it in plain English — no menus, no drag-and-drop editors.",
+                "point_3": "No Templates to Tweak: Skip the cookie-cutter designs. Your site is built around your content and preferences — not crammed into a template.",
+                "point_4": "Share Anywhere: Once you're done, you can share your sandbox link for anyone to view."
+            },
+            "applications": {
+                "title": "Whether you're a job seeker, freelancer, creative, or student, your resume should work harder for you. A personal website helps you:",
+                "point_1": "Stand out in a competitive job market",
+                "point_2": "Highlight your work and personality",
+                "point_3": "Create a more dynamic, professional presence online",
+                "summary": "And with our natural language customization, you don't need to be a designer or developer. If you can describe what you want, you can make it happen."
+            }
+        },
+        "footer": {
+            "title": "Ready to Build Your Resume Website?",
+            "subtitle": "It takes less than a minute to go from static PDF to live website. No setup. No coding. No fluff.",
+            "closing": "Turn your resume into a website today — it's fast, free, and all yours."
+        }
     },
     "pricing": {
         "header": "Pricing",
@@ -43,5 +69,8 @@
         "loading": "Getting ready, hang tight!",
         "error": "Something went wrong, please try again.",
         "portfolio_delete": "Portfolio deleted!"
+    },
+    "button": {
+        "get_started": "Get started ↗"
     }
 }
