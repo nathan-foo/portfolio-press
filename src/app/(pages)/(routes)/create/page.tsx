@@ -39,10 +39,10 @@ const CreatePage = () => {
             <Navbar />
             <div className="flex flex-col items-center justify-center p-8">
                 <h1 className="pt-20 text-5xl font-bold">
-                    {enUS.create.create_header}
+                    {enUS.create.header}
                 </h1>
                 <p className="text-lg py-8 text-muted-foreground">
-                    {enUS.create.create_subheader}
+                    {enUS.create.subheader}
                 </p>
                 {!isLoading && (
                     <UploadDropzone

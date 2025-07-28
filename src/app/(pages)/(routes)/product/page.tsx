@@ -11,10 +11,10 @@ const ProductPage = () => {
             <div className="flex flex-col w-full p-8">
                 <div className="flex flex-col items-center justify-center">
                     <div className="text-5xl font-bold pt-20">
-                        {enUS.product.product_header}
+                        {enUS.product.header}
                     </div>
                     <p className="text-lg pt-8 pb-20 text-muted-foreground">
-                        {enUS.product.product_subheader}
+                        {enUS.product.subheader}
                     </p>
                     
                 </div>

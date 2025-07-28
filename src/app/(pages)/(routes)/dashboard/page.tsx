@@ -34,10 +34,10 @@ const DashboardPage = () => {
             <div className="flex flex-col w-full p-8">
                 <div className="flex flex-col items-center justify-center">
                     <div className="text-5xl font-bold pt-20">
-                        {enUS.dashboard.dashboard_header}
+                        {enUS.dashboard.header}
                     </div>
                     <p className="text-lg pt-8 pb-20 text-muted-foreground">
-                        {enUS.dashboard.dashboard_subheader}
+                        {enUS.dashboard.subheader}
                     </p>
                     <div className="w-4xl">
                         <div className="grid grid-cols-3 gap-4 p-6 w-full bg-muted rounded-xl border">

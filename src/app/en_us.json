@@ -6,20 +6,21 @@
         "hero_button": "Get started ↗"
     },
     "create": {
-        "create_header": "Ready to boost your career?",
-        "create_subheader": "Upload your resume to get started."
+        "header": "Ready to boost your career?",
+        "subheader": "Upload your resume to get started."
     },
     "dashboard": {
-        "dashboard_header": "Your Portfolios",
-        "dashboard_subheader": "View and edit your generated websites here."
+        "header": "Your Portfolios",
+        "subheader": "View and edit your generated websites here."
     },
     "product": {
-        "product_header": "What is Portfolio Press?",
-        "product_subheader": "Learn how our product can kickstart your career."
+        "header": "What is Portfolio Press?",
+        "subheader": "Learn how our product can kickstart your career.",
+        "body_header": "No Code. No Templates. Just Plain English."
     },
     "pricing": {
-        "pricing_header": "Pricing",
-        "pricing_subheader": "Discover the right plan for your needs."
+        "header": "Pricing",
+        "subheader": "Discover the right plan for your needs."
     },
     "navbar": {
         "logo_text": "📚 Portfolio Press",
