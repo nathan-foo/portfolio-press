@@ -46,7 +46,13 @@
     },
     "pricing": {
         "header": "Pricing",
-        "subheader": "Discover the right plan for your needs."
+        "subheader": "Discover the right plan for your needs.",
+        "cards": {
+            "free_title": "Free",
+            "free_body": "Great for exploring our basic capabilities. Comes with 5 free credits per month and limited testing.",
+            "pro_title": "Pro",
+            "pro_body": "Perfect for serious users. Gain 20 pro credits per month and access to our best model."
+        }
     },
     "navbar": {
         "logo_text": "📚 Portfolio Press",
